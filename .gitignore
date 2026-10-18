@@ -1,0 +1,17 @@
+# Build output
+target/
+bin/
+
+# TestNG / Extent output
+test-output/
+reports/
+
+# IDE files
+.settings/
+.classpath
+.project
+.idea/
+*.iml
+
+# OS files
+.DS_Store
