@@ -26,7 +26,7 @@ public class ErrorValidationTest extends BaseTest {
 	public void loginErrorValidation() throws IOException, InterruptedException {
 
 		String productName = "ADIDAS ORIGINAL";
-		landingPage.login("sugandhasinha07@gmail.com", "Divisha@12345");
+		landingPage.login("sugandhasinha07@gmail.com", "WrongPassword@1");
 		Assert.assertEquals("Incorrect email or password.", landingPage.getErrorMessage());
 
 	}
@@ -38,7 +38,7 @@ public class ErrorValidationTest extends BaseTest {
 		String productName = "ADIDAS ORIGINAL";
 		// LandingPage landingPage=launchApplication();
 
-		ProductCatalogue productCatalogue = landingPage.login("sugandhasinhadiv@gmail.com", "Divisha@123");
+		ProductCatalogue productCatalogue = landingPage.login("sugandhasinhadiv@gmail.com", System.getenv("TEST_PASSWORD"));
 		List<WebElement> products = productCatalogue.getProductList();
 		productCatalogue.addProductToCart(productName);
 		CartPage cartPage = productCatalogue.goToCartPage();
