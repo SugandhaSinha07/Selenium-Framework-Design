@@ -23,7 +23,7 @@ public class StandAloneTest {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		LandingPage landingPage=new LandingPage(driver);
 		landingPage.go();
-		landingPage.login("sugandhasinha07@gmail.com", "Divisha@123");
+		landingPage.login("sugandhasinha07@gmail.com", System.getenv("TEST_PASSWORD"));
 		ProductCatalogue productCatalogue=new ProductCatalogue(driver);
 		List<WebElement> products = productCatalogue.getProductList();
 		productCatalogue.addProductToCart(productName);
