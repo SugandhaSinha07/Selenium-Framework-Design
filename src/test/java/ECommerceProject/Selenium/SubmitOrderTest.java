@@ -54,7 +54,7 @@ public class SubmitOrderTest extends BaseTest {
 	// To verify if ADIDAS ORIGINAL is displaying on Orders page
 	public void orderHistoryTest() {
 		String productName = "ADIDAS ORIGINAL";
-		ProductCatalogue productCatalogue = landingPage.login("sugandhasinha07@gmail.com", "Divisha@123");
+		ProductCatalogue productCatalogue = landingPage.login("sugandhasinha07@gmail.com", System.getenv("TEST_PASSWORD"));
 		OrderPage orderspage = productCatalogue.goToOrderPage();
 		Boolean match = orderspage.verifyProductDisplay(productName);
 		Assert.assertTrue(match);
